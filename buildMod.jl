@@ -58,7 +58,7 @@ function buildMod(fData,uData, contDList)
   contData = uData.contDList;
 
   # set up the model
-  mp = Model(solver = IpoptSolver(print_level=1));
+  mp = Model(solver = IpoptSolver(print_level=5));       # default is 5; range is 0 to 12
   #mp = Model(solver = KnitroSolver(KTR_PARAM_OUTLEV=2,  # default is 2
   # 			feastol=2.5e-9, 
   # 			#feastol_abs=1e-2,
