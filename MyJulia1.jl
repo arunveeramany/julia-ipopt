@@ -30,10 +30,10 @@ m = Model(with_optimizer(Gurobi.Optimizer, OutputFlag=0))
 @constraint(m, const1,  11x + 3y >=  21)
 @constraint(m, const2,   6x + 20y >= 39)
 
-status = solve(m)
+status = optimize!(m)
 println("Status = $status")
 
-println("Optimal Objective Function value: ", getObjectiveValue(m))
+println("Optimal Objective Function value: ", JuMP.objective_value(m))
 println("Optimal Solutions:")
 println("x = ", getValue(x))
 println("y = ", getValue(y))
