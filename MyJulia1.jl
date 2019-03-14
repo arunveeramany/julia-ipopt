@@ -21,20 +21,9 @@ function MyJulia1(InFile1::String, InFile2::String, InFile3::String, InFile4::St
 
 
 m = Model(with_optimizer(Gurobi.Optimizer, OutputFlag=0))
-#Model(solver=GurobiSolver())
+
 @variable(m, x >=0)
 @variable(m, y >=0)
-
-@variable(m, x >= LB)
-@variable(m, x <= UB)
-@variable(m, LB  <=  x  <= UB)
-
-@variable(m, x >=0, Int)
-@variable(m, x >=0, Bin)
-
-@variable(m, x[1:M,1:N]  >= 0)
-
-@variable(m, x[i=1:5], start=(i))
 
 @objective(m, Min, 10x + 26y)
 
