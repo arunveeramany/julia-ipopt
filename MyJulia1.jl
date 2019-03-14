@@ -20,7 +20,7 @@ function MyJulia1(InFile1::String, InFile2::String, InFile3::String, InFile4::St
     println("  $(NetworkModel)")
 
 
-m = Model(solver=Gurobisolver())
+m = Model(solver=GurobiSolver())
 @variable(m, x >=0)
 @variable(m, y >=0)
 
